@@ -109,7 +109,7 @@ static void soundCompletionCallback(SystemSoundID ssid, void* data);
         
     } else {
 #endif
-        CDVAlertView* alertView = [[CDVAlertView alloc]
+        CDVANDAlertView* alertView = [[CDVANDAlertView alloc]
                                    initWithTitle:title
                                    message:message
                                    delegate:self
@@ -191,7 +191,7 @@ static void soundCompletionCallback(SystemSoundID ssid, void* data);
   */
 - (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    CDVAlertView* cdvAlertView = (CDVAlertView*)alertView;
+    CDVANDAlertView* cdvAlertView = (CDVANDAlertView*)alertView;
     CDVPluginResult* result;
 
     // Determine what gets returned to JS based on the alert view type.
@@ -241,7 +241,7 @@ static void soundCompletionCallback(SystemSoundID  ssid, void* data) {
 
 @end
 
-@implementation CDVAlertView
+@implementation CDVANDAlertView
 
 @synthesize callbackId;
 
