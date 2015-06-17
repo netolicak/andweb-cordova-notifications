@@ -39,7 +39,7 @@ module.exports = {
     alert: function(message, completeCallback, title, buttonLabel) {
         var _title = (title || "Alert");
         var _buttonLabel = (buttonLabel || "OK");
-        exec(completeCallback, null, "Notification", "alert", [message, _title, _buttonLabel]);
+        exec(completeCallback, null, "ANDNotification", "alert", [message, _title, _buttonLabel]);
     },
 
     /**
@@ -57,7 +57,7 @@ module.exports = {
 
         // Strings are deprecated!
         if (typeof _buttonLabels === 'string') {
-            console.log("Notification.confirm(string, function, string, string) is deprecated.  Use Notification.confirm(string, function, string, array).");
+            console.log("ANDNotification.confirm(string, function, string, string) is deprecated.  Use ANDNotification.confirm(string, function, string, array).");
         }
 
         // Some platforms take an array of button label names.
@@ -76,7 +76,7 @@ module.exports = {
                 _buttonLabels = buttonLabelArray.toString();
             }
         }
-        exec(resultCallback, null, "Notification", "confirm", [message, _title, _buttonLabels]);
+        exec(resultCallback, null, "ANDNotification", "confirm", [message, _title, _buttonLabels]);
     },
 
     /**
@@ -96,7 +96,7 @@ module.exports = {
         var _title = (title || "Prompt");
         var _buttonLabels = (buttonLabels || ["OK","Cancel"]);
         var _defaultText = (defaultText || "");
-        exec(resultCallback, null, "Notification", "prompt", [_message, _title, _buttonLabels, _defaultText]);
+        exec(resultCallback, null, "ANDNotification", "prompt", [_message, _title, _buttonLabels, _defaultText]);
     },
 
     promptNumeric: function(message, resultCallback, title, buttonLabels, defaultText) {
@@ -104,17 +104,17 @@ module.exports = {
         var _title = (title || "Prompt");
         var _buttonLabels = (buttonLabels || ["OK","Cancel"]);
         var _defaultText = (defaultText || "");
-        exec(resultCallback, null, "Notification", "promptNumeric", [_message, _title, _buttonLabels, _defaultText]);
+        exec(resultCallback, null, "ANDNotification", "promptNumeric", [_message, _title, _buttonLabels, _defaultText]);
     },
 
     /**
      * Causes the device to beep.
-     * On Android, the default notification ringtone is played "count" times.
+     * On Android, the default ANDNotification ringtone is played "count" times.
      *
      * @param {Integer} count       The number of beeps.
      */
     beep: function(count) {
         var defaultedCount = count || 1;
-        exec(null, null, "Notification", "beep", [ defaultedCount ]);
+        exec(null, null, "ANDNotification", "beep", [ defaultedCount ]);
     }
 };
