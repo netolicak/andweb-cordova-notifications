@@ -99,7 +99,7 @@ static void soundCompletionCallback(SystemSoundID ssid, void* data);
             
             [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
                 textField.text = defaultText;
-                textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+                textField.keyboardType = UIKeyboardTypeDecimalPad;
             }];
         }
         
@@ -134,7 +134,7 @@ static void soundCompletionCallback(SystemSoundID ssid, void* data);
             alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
             UITextField* textField = [alertView textFieldAtIndex:0];
             textField.text = defaultText;
-            textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+            textField.keyboardType = UIKeyboardTypeDecimalPad;
         }
         
         [alertView show];
