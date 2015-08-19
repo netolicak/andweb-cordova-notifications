@@ -66,7 +66,7 @@ static void soundCompletionCallback(SystemSoundID ssid, void* data);
                                      {
                                          CDVPluginResult* result;
                                          
-                                         if ([dialogType isEqualToString:DIALOG_TYPE_PROMPT]) {
+                                         if ([dialogType isEqualToString:DIALOG_TYPE_PROMPT] || [dialogType isEqualToString:DIALOG_TYPE_PROMPT_NUMERIC]) {
                                              
                                              NSString* value0 = [[alertController.textFields objectAtIndex:0] text];
                                              NSDictionary* info = @{
@@ -99,7 +99,9 @@ static void soundCompletionCallback(SystemSoundID ssid, void* data);
             
             [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
                 textField.text = defaultText;
-                textField.keyboardType = UIKeyboardTypeDecimalPad;
+                //textField.keyboardType = UIKeyboardTypeDecimalPad;
+                [textField setKeyboardType:UIKeyboardTypeDecimalPad];
+
             }];
         }
         
@@ -134,7 +136,8 @@ static void soundCompletionCallback(SystemSoundID ssid, void* data);
             alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
             UITextField* textField = [alertView textFieldAtIndex:0];
             textField.text = defaultText;
-            textField.keyboardType = UIKeyboardTypeDecimalPad;
+            //textField.keyboardType = UIKeyboardTypeDecimalPad;
+            [textField setKeyboardType:UIKeyboardTypeDecimalPad];
         }
         
         [alertView show];
