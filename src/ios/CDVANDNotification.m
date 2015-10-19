@@ -102,7 +102,7 @@ static void soundCompletionCallback(SystemSoundID ssid, void* data);
                 //textField.keyboardType = UIKeyboardTypeDecimalPad;
                 [textField setKeyboardType:UIKeyboardTypeDecimalPad];
 
-                textField.sizeToFit();
+                [textField sizeToFit];
 
             }];
         }
@@ -137,7 +137,7 @@ static void soundCompletionCallback(SystemSoundID ssid, void* data);
             // tempFrame.size.width = 100;
             // textField.frame = tempFrame;
 
-            textField.sizeToFit();
+            [textField sizeToFit];
         }
 
         if ([dialogType isEqualToString:DIALOG_TYPE_PROMPT_NUMERIC]) {
@@ -147,7 +147,7 @@ static void soundCompletionCallback(SystemSoundID ssid, void* data);
             //textField.keyboardType = UIKeyboardTypeDecimalPad;
             [textField setKeyboardType:UIKeyboardTypeDecimalPad];
 
-            textField.sizeToFit();
+            [textField sizeToFit];
         }
         
         [alertView show];
