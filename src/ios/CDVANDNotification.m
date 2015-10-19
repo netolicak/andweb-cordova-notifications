@@ -102,9 +102,7 @@ static void soundCompletionCallback(SystemSoundID ssid, void* data);
                 //textField.keyboardType = UIKeyboardTypeDecimalPad;
                 [textField setKeyboardType:UIKeyboardTypeDecimalPad];
 
-                CGRect tempFrame = textField.frame;
-                tempFrame.size.width = 100;
-                textField.frame = tempFrame;
+                textField.sizeToFit();
 
             }];
         }
@@ -135,9 +133,11 @@ static void soundCompletionCallback(SystemSoundID ssid, void* data);
             UITextField* textField = [alertView textFieldAtIndex:0];
             textField.text = defaultText;
 
-            CGRect tempFrame = textField.frame;
-            tempFrame.size.width = 100;
-            textField.frame = tempFrame;
+            // CGRect tempFrame = textField.frame;
+            // tempFrame.size.width = 100;
+            // textField.frame = tempFrame;
+
+            textField.sizeToFit();
         }
 
         if ([dialogType isEqualToString:DIALOG_TYPE_PROMPT_NUMERIC]) {
@@ -147,9 +147,7 @@ static void soundCompletionCallback(SystemSoundID ssid, void* data);
             //textField.keyboardType = UIKeyboardTypeDecimalPad;
             [textField setKeyboardType:UIKeyboardTypeDecimalPad];
 
-            CGRect tempFrame = textField.frame;
-            tempFrame.size.width = 100;
-            textField.frame = tempFrame;
+            textField.sizeToFit();
         }
         
         [alertView show];
