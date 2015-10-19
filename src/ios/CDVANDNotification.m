@@ -102,6 +102,10 @@ static void soundCompletionCallback(SystemSoundID ssid, void* data);
                 //textField.keyboardType = UIKeyboardTypeDecimalPad;
                 [textField setKeyboardType:UIKeyboardTypeDecimalPad];
 
+                CGRect tempFrame = textField.frame;
+                tempFrame.size.width = 100;
+                textField.frame = tempFrame;
+
             }];
         }
         
