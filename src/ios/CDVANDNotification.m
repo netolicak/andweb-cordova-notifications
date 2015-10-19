@@ -130,6 +130,10 @@ static void soundCompletionCallback(SystemSoundID ssid, void* data);
             alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
             UITextField* textField = [alertView textFieldAtIndex:0];
             textField.text = defaultText;
+
+            CGRect tempFrame = textField.frame;
+            tempFrame.size.width = 100;
+            textField.frame = tempFrame;
         }
 
         if ([dialogType isEqualToString:DIALOG_TYPE_PROMPT_NUMERIC]) {
@@ -139,7 +143,7 @@ static void soundCompletionCallback(SystemSoundID ssid, void* data);
             //textField.keyboardType = UIKeyboardTypeDecimalPad;
             [textField setKeyboardType:UIKeyboardTypeDecimalPad];
 
-            CGFloat tempFrame = textField.frame;
+            CGRect tempFrame = textField.frame;
             tempFrame.size.width = 100;
             textField.frame = tempFrame;
         }
